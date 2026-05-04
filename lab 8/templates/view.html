@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2>Environmental Weather App</h2>
+    <form method="POST">
+        <input type="text" name="city_name" placeholder="Search Location..." required>
+        <button type="submit">Get Updates</button>
+    </form>
+
+    {% if info %}
+        <div style="margin-top: 20px;">
+            <h3>Results for {{ info.name }}</h3>
+            <p>Current Temp: {{ info.main.temp }} °C</p>
+            <p>Humidity Level: {{ info.main.humidity }}%</p>
+            <p>Sky: {{ info.weather[0].description }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
